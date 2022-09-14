@@ -565,9 +565,19 @@ video {
   margin-right: auto;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mx-24 {
   margin-left: 6rem;
   margin-right: 6rem;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .mt-6 {
@@ -578,10 +588,6 @@ video {
   margin-top: 2.5rem;
 }
 
-.ml-10 {
-  margin-left: 2.5rem;
-}
-
 .mt-20 {
   margin-top: 5rem;
 }
@@ -590,8 +596,8 @@ video {
   margin-top: 1rem;
 }
 
-.mr-10 {
-  margin-right: 2.5rem;
+.ml-10 {
+  margin-left: 2.5rem;
 }
 
 .ml-4 {
@@ -610,20 +616,8 @@ video {
   margin-top: 0.5rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.ml-auto {
-  margin-left: auto;
-}
-
-.mr-0 {
-  margin-right: 0px;
+.mr-10 {
+  margin-right: 2.5rem;
 }
 
 .flex {
@@ -634,14 +628,38 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.max-h-\[150px\] {
+  max-height: 150px;
+}
+
+.w-full {
+  width: 100%;
+}
+
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
-.max-w-screen-2xl {
-  max-width: 1536px;
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .max-w-2xl {
@@ -652,8 +670,20 @@ video {
   max-width: 48rem;
 }
 
+.max-w-screen-2xl {
+  max-width: 1536px;
+}
+
 .max-w-4xl {
   max-width: 56rem;
+}
+
+.max-w-\[150px\] {
+  max-width: 150px;
+}
+
+.max-w-\[100px\] {
+  max-width: 100px;
 }
 
 .list-disc {
@@ -662,6 +692,10 @@ video {
 
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-2 {
@@ -694,6 +728,16 @@ video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .rounded-2xl {
@@ -745,15 +789,6 @@ video {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-}
-
-.fill-slate-800 {
-  fill: #1e293b;
-}
-
 .fill-slate-500 {
   fill: #64748b;
 }
@@ -772,11 +807,6 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -785,6 +815,10 @@ video {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
 }
 
 .text-center {
@@ -823,9 +857,9 @@ video {
   font-style: italic;
 }
 
-.text-gray-500 {
+.text-gray-400 {
   --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -841,11 +875,6 @@ video {
 .text-cyan-200 {
   --tw-text-opacity: 1;
   color: rgb(165 243 252 / var(--tw-text-opacity));
-}
-
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .shadow-md {
@@ -871,6 +900,7 @@ video {
 .typewriter {
   overflow: hidden;
   /* Ensures the content is not revealed until the animation */
+  overflow-wrap: break-word;
   border-right: 0.15em solid rgb(171, 170, 170);
   /* The typwriter cursor */
   white-space: nowrap;
@@ -879,10 +909,17 @@ video {
   /* Gives that scrolling effect as the typing happens */
   -webkit-animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
           animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
-  display: block;
+  display: inline-block;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+}
+
+.typeCaret {
+  border-right: 0.15em solid rgb(171, 170, 170);
+  /* The typwriter cursor */
+  -webkit-animation: blink-caret 0.5s step-end infinite;
+          animation: blink-caret 0.5s step-end infinite;
 }
 
 /* The typing effect */
@@ -946,4 +983,41 @@ video {
 .hover\:text-gray-200:hover {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:mx-24 {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  .md\:ml-10 {
+    margin-left: 2.5rem;
+  }
+
+  .md\:mr-10 {
+    margin-right: 2.5rem;
+  }
+
+  .md\:list-item {
+    display: list-item;
+  }
+
+  .md\:w-fit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .md\:max-w-screen-2xl {
+    max-width: 1536px;
+  }
+
+  .md\:max-w-\[150px\] {
+    max-width: 150px;
+  }
+
+  .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }
